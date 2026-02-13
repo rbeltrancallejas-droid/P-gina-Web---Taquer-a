@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Taquería Beltrán</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <img src="images/logo.jpeg" alt="Logo Taquería Beltrán">
+    <h1>Taquería Beltrán</h1>
+    <p>López Rayón #220, Col. Lo Arado, C.P. 48940, Casimiro Castillo</p>
+</header>
+
+<!-- ================= HORARIO ================= -->
+<section class="horario">
+    <h2>Horario</h2>
+    <p>Lunes, Martes y Viernes a Domingo</p>
+    <p class="hora">7:00 PM - 12:00 AM</p>
+    <p>Miércoles y Jueves: Descanso</p>
+</section>
+
+<!-- ================= PROMOCIÓN ================= -->
+<section class="promocion">
+    <h3>🔥 PROMOCIÓN ESPECIAL SOLO DÍA MARTES🔥</h3>
+    <br><br>
+    <p>
+        En la compra de <strong>10 tacos (cualquier taco)</strong> llévate GRATIS:
+        <br><br>
+        ✔ 1/2 orden de carne asada con su verdura  
+        ✔ 2 quesadillas  
+        ✔ 1/2 litro de agua del día  
+        <br><br>
+        ¡¡El agua fresca cambia diariamente según el sabor disponible!!
+    </p>
+</section>
+
+<!-- ================= MENÚ ================= -->
+<section class="menu">
+    <h2>Menú</h2>
+
+    <div class="contenedor-cards">
+
+        <!-- Taco Asada -->
+        <div class="card" onclick="mostrarProducto('Taco de Asada','images/taco de azada.jpg','Carne asada con cilantro y cebolla.','$20')">
+            <img src="images/taco de azada.jpg" alt="Taco de Asada">
+            <div class="card-content">
+                <span class="etiqueta">Más vendido</span>
+                <h3>Taco de Asada</h3>
+                <p class="precio">$20</p>
+            </div>
+        </div>
+
+        <!-- Taco Adobada -->
+        <div class="card" onclick="mostrarProducto('Taco de Adobada','images/taco de adobada.jpg','Carne adobada receta especial.','$20')">
+            <img src="images/taco de adobada.jpg" alt="Taco de Adobada">
+            <div class="card-content">
+                <span class="etiqueta">Especial</span>
+                <h3>Taco de Adobada</h3>
+                <p class="precio">$20</p>
+            </div>
+        </div>
+
+        <!-- Taco Chorizo -->
+        <div class="card" onclick="mostrarProducto('Taco de Chorizo','images/taco de chorizo.jpg','Chorizo dorado al punto perfecto.','$20')">
+            <img src="images/taco de chorizo.jpg" alt="Taco de Chorizo">
+            <div class="card-content">
+                <span class="etiqueta">Tradicional</span>
+                <h3>Taco de Chorizo</h3>
+                <p class="precio">$20</p>
+            </div>
+        </div>
+
+        <!-- Taco Tripa Guisado -->
+        <div class="card" onclick="mostrarProducto('Taco de Tripa Guisado','images/taco de tripa guisado.jpg','Tripa guisada suave y jugosa.','$28')">
+            <img src="images/taco de tripa guisado.jpg" alt="Taco de Tripa Guisado">
+            <div class="card-content">
+                <span class="etiqueta">Suave</span>
+                <h3>Taco de Tripa Guisado</h3>
+                <p class="precio">$28</p>
+            </div>
+        </div>
+
+        <!-- Taco Tripa Torteado -->
+        <div class="card" onclick="mostrarProducto('Taco de Tripa Torteado','images/taco de tripa torteado.jpg','Tripa crujiente estilo dorado.','$28')">
+            <img src="images/taco de tripa torteado.jpg" alt="Taco de Tripa Torteado">
+            <div class="card-content">
+                <span class="etiqueta">Crujiente</span>
+                <h3>Taco de Tripa Torteado</h3>
+                <p class="precio">$28</p>
+            </div>
+        </div>
+
+        <!-- Taco Camarón -->
+        <div class="card" onclick="mostrarProducto('Taco de Camarón','images/taco de camaron.jpg','Camarón sazonado y fresco.','$30')">
+            <img src="images/taco de camaron.jpg" alt="Taco de Camarón">
+            <div class="card-content">
+                <span class="etiqueta">Del mar</span>
+                <h3>Taco de Camarón</h3>
+                <p class="precio">$30</p>
+            </div>
+        </div>
+
+        <!-- Taco Pescado -->
+        <div class="card" onclick="mostrarProducto('Taco de Pescado','images/taco de pescado.jpg','Filete de pescado fresco.','$25')">
+            <img src="images/taco de pescado.jpg" alt="Taco de Pescado">
+            <div class="card-content">
+                <span class="etiqueta">Del mar</span>
+                <h3>Taco de Pescado</h3>
+                <p class="precio">$25</p>
+            </div>
+        </div>
+
+      
+        <!-- Órdenes de Carne Asada -->
+        <div class="card" onclick="mostrarProducto(
+          'Órdenes de Carne Asada',
+          'images/orden de carne azada.jpg',
+          'Disfruta nuestra carne asada acompañada con sus complementos.\n\nOpciones disponibles:\n• Media orden: $70\n• Orden completa: $100',
+          'Desde $70'
+)">
+    <img src="images/orden de carne azada.jpg" alt="Órdenes de Carne Asada">
+    <div class="card-content">
+        <span class="etiqueta">Completa</span>
+        <h3>Órdenes de Carne Asada</h3>
+        <p class="precio">Desde $70</p>
+    </div>
+</div>
+
+
+        <!-- Doradita -->
+        <div class="card" onclick="mostrarProducto('Doradita de Asada','images/doradita de azada.jpg','Doradita crujiente rellena de carne asada.','$30')">
+            <img src="images/doradita de azada.jpg" alt="Doradita de Asada">
+            <div class="card-content">
+                <span class="etiqueta">Crujiente</span>
+                <h3>Doradita de Asada</h3>
+                <p class="precio">$30</p>
+            </div>
+        </div>
+
+        <!-- Pellizcada -->
+        <div class="card" onclick="mostrarProducto('Pellizcada de Asada','images/pellizcada de azada.jpg','Pellizcada tradicional con carne asada.','$35')">
+            <img src="images/pellizcada de azada.jpg" alt="Pellizcada de Asada">
+            <div class="card-content">
+                <span class="etiqueta">Tradicional</span>
+                <h3>Pellizcada de Asada</h3>
+                <p class="precio">$35</p>
+            </div>
+        </div>
+
+        <!-- Aguas Frescas -->
+        <div class="card" onclick="mostrarProducto(
+          'Aguas Frescas',
+          'images/aguas frescas.jpg',
+          'El sabor cambia diariamente. Generalmente contamos con jamaica, arroz, granada china, limón y guanábana. Siempre frescas y preparadas al momento.\n\nTamaños disponibles:\n• Chico (350ml aprox): $15\n• Mediano (650ml aprox): $20\n• 1 Litro (1000ml aprox): $25',
+          'Desde $15 hasta $25'
+)">
+    <img src="images/aguas frescas.jpg" alt="Aguas Frescas">
+    <div class="card-content">
+        <span class="etiqueta">Refrescante</span>
+        <h3>Aguas Frescas</h3>
+        <p class="precio">Desde $15</p>
+    </div>
+</div>
+
+
+    </div>
+</section>
+
+<!-- ================= MODAL ================= -->
+<div id="modal" class="modal">
+    <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        <h2 id="modalTitulo"></h2>
+        <img id="modalImg" alt="">
+        <p id="modalDesc"></p>
+        <p id="modalPrecio"></p>
+    </div>
+</div>
+
+<!-- BOTÓN VOLVER ARRIBA -->
+<button class="boton-arriba" onclick="irArriba()">↑</button>
+
+<!-- FOOTER -->
+<footer>
+    📞 357 383 0226 — López Rayón #220, Col. Lo Arado, C.P. 48940 — Casimiro Castillo  
+    <br>
+    © 2026 Taquería Beltrán - Todos los derechos reservados
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
