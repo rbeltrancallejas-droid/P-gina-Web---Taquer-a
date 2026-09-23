@@ -1,196 +1,1008 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Taquería Beltrán</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
 
-<!-- ================= HEADER ================= -->
-<header>
-    <img src="images/logo.jpeg" alt="Logo Taquería Beltrán">
-    <h1>Taquería Beltrán</h1>
-    <p>López Rayón #220, Col. Lo Arado, C.P. 48940, Casimiro Castillo</p>
-</header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- ================= HORARIO ================= -->
-<section class="horario">
-    <h2>Horario</h2>
-    <p>Lunes, Martes y Viernes a Domingo</p>
-    <p class="hora">7:00 PM - 12:00 AM</p>
-    <p>Miércoles y Jueves: Descanso</p>
-</section>
+    <meta
+      name="description"
+      content="Taquería Beltrán. Tacos, carne asada, especialidades y aguas frescas en La Huerta, Jalisco."
+    />
 
-<!-- ================= PROMOCIÓN ================= -->
-<section class="promocion">
-    <h3>🔥 PROMOCIÓN ESPECIAL SOLO DÍA MARTES🔥</h3>
-    <br><br>
-    <p>
-        En la compra de <strong>10 tacos (cualquier taco)</strong> llévate GRATIS:
-        <br><br>
-        ✔ 1/2 orden de carne asada con su verdura  
-        ✔ 2 quesadillas  
-        ✔ 1/2 litro de agua del día  
-        <br><br>
-        ¡¡El agua fresca cambia diariamente según el sabor disponible!!
-    </p>
-</section>
+    <meta name="theme-color" content="#7a0909" />
 
-<!-- ================= MENÚ ================= -->
-<section class="menu">
-    <h2>Menú</h2>
+    <title>Taquería Beltrán | Tacos y especialidades</title>
 
-    <div class="contenedor-cards">
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
 
-        <!-- Taco Asada -->
-        <div class="card" onclick="mostrarProducto('Taco de Asada','images/taco de azada.jpg','Carne asada con cilantro y cebolla.','$20')">
-            <img src="images/taco de azada.jpg" alt="Taco de Asada">
-            <div class="card-content">
-                <span class="etiqueta">Más vendido</span>
+  <body>
+    <!-- =====================================================
+         ACCESIBILIDAD
+    ====================================================== -->
+
+    <a href="#contenido" class="skip-link"> Saltar al contenido </a>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header">
+      <div class="header-inner">
+        <a href="#inicio" class="brand">
+          <img src="images/logo.jpeg" alt="Logo de Taquería Beltrán" />
+
+          <span class="brand-name"> Taquería Beltrán </span>
+        </a>
+
+        <button
+          type="button"
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#menu">Menú</a>
+          <a href="#promocion">Promoción</a>
+          <a href="#galeria">Galería</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <!-- =================================================
+             HERO
+        ================================================== -->
+
+      <section class="hero" id="inicio">
+        <div class="hero-image"></div>
+
+        <div class="hero-content">
+          <span class="eyebrow"> TAQUERÍA BELTRÁN </span>
+
+          <h1>
+            Tacos,
+            <span>carne asada</span>
+            y sabor local
+          </h1>
+
+          <p>
+            Tacos y especialidades preparados para disfrutar en La Huerta,
+            Jalisco.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#menu" class="button button-primary"> Ver menú </a>
+
+            <a href="tel:3573830226" class="button button-secondary">
+              Llamar
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================
+             INFORMACIÓN
+        ================================================== -->
+
+      <section class="quick-info">
+        <div class="quick-info-grid">
+          <div class="quick-item">
+            <span class="icon-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="8" />
+                <path d="M12 8v5l3 2" />
+              </svg>
+            </span>
+
+            <div>
+              <small> HORARIO </small>
+
+              <strong> 7:00 PM – 12:00 AM </strong>
+            </div>
+          </div>
+
+          <div class="quick-item">
+            <span class="icon-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" />
+
+                <circle cx="12" cy="9" r="2.2" />
+              </svg>
+            </span>
+
+            <div>
+              <small> UBICACIÓN </small>
+
+              <strong> La Huerta, Jalisco </strong>
+            </div>
+          </div>
+
+          <div class="quick-item">
+            <span class="icon-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5L12 3Z"
+                />
+              </svg>
+            </span>
+
+            <div>
+              <small> ESPECIALIDAD </small>
+
+              <strong> Tacos y carne asada </strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================
+             NOSOTROS
+        ================================================== -->
+
+      <section class="section about" id="nosotros">
+        <div class="section-heading">
+          <span class="eyebrow"> TAQUERÍA BELTRÁN </span>
+
+          <h2>Una opción local para disfrutar</h2>
+
+          <p>
+            Diferentes alternativas de tacos, especialidades y bebidas para
+            disfrutar en la localidad.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-photo">
+            <img
+              src="images/orden de carne azada.jpg"
+              alt="Orden de carne asada de Taquería Beltrán"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="about-text">
+            <h3>Tacos y especialidades</h3>
+
+            <p>
+              El menú reúne diferentes opciones, desde tacos de asada, adobada y
+              chorizo hasta alternativas de tripa, camarón y pescado.
+            </p>
+
+            <p>
+              También se encuentran órdenes de carne asada, doraditas,
+              pellizcadas y aguas frescas.
+            </p>
+
+            <div class="business-details">
+              <div>
+                <strong> Días de atención </strong>
+
+                <span> Lunes, martes y viernes a domingo </span>
+              </div>
+
+              <div>
+                <strong> Descanso </strong>
+
+                <span> Miércoles y jueves </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================
+             HISTORIA / MISIÓN / VISIÓN
+        ================================================== -->
+
+      <section class="identity">
+        <div class="identity-grid">
+          <article>
+            <span>01</span>
+            <h3>Historia</h3>
+            <p>
+              Taquería Beltrán fue fundada en agosto de 2015 en La Huerta,
+              Jalisco, con la idea de ofrecer tacos y especialidades preparadas
+              al momento, manteniendo el estilo cercano y tradicional de una
+              taquería local.
+            </p>
+            <p>
+              A lo largo de estos años, el negocio ha buscado conservar una
+              atención sencilla y familiar, acompañando cada platillo con
+              ingredientes frescos y una preparación pensada para disfrutar en
+              cada visita.
+            </p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>Misión</h3>
+            <p>
+              Ofrecer tacos, órdenes y especialidades con un sabor que
+              represente la cocina mexicana y la identidad de nuestra localidad,
+              procurando que cada platillo sea preparado con cuidado y servido
+              en el momento.
+            </p>
+            <p>
+              Buscamos brindar una atención cercana y una experiencia agradable,
+              haciendo que cada cliente encuentre en Taquería Beltrán un lugar
+              sencillo, accesible y con ganas de volver.
+            </p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>Visión</h3>
+            <p>
+              Consolidar a Taquería Beltrán como un establecimiento reconocido
+              dentro de La Huerta, Jalisco, por la calidad de sus tacos, sus
+              especialidades y la atención que brinda a sus clientes.
+            </p>
+            <p>
+              Mantener nuestras raíces como negocio local mientras incorporamos
+              nuevas formas de mejorar la experiencia, desde la presentación de
+              nuestros productos hasta la manera en que nuestros clientes
+              conocen y contactan al negocio.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- =================================================
+             MENÚ
+        ================================================== -->
+
+      <section class="section menu" id="menu">
+        <div class="section-heading">
+          <span class="eyebrow"> NUESTRO MENÚ </span>
+
+          <h2>Lo que puedes encontrar</h2>
+
+          <p>Consulta las opciones disponibles y sus precios.</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Categorías del menú">
+          <button class="filter active" data-filter="todos">Todos</button>
+
+          <button class="filter" data-filter="tacos">Tacos</button>
+
+          <button class="filter" data-filter="especialidades">
+            Especialidades
+          </button>
+
+          <button class="filter" data-filter="bebidas">Bebidas</button>
+        </div>
+
+        <div class="products">
+          <!-- 1 -->
+
+          <article class="product" data-category="tacos">
+            <div class="product-image">
+              <img
+                src="images/taco de azada.jpg"
+                alt="Taco de asada"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="product-body">
+              <div class="product-title">
                 <h3>Taco de Asada</h3>
-                <p class="precio">$20</p>
-            </div>
-        </div>
 
-        <!-- Taco Adobada -->
-        <div class="card" onclick="mostrarProducto('Taco de Adobada','images/taco de adobada.jpg','Carne adobada receta especial.','$20')">
-            <img src="images/taco de adobada.jpg" alt="Taco de Adobada">
-            <div class="card-content">
-                <span class="etiqueta">Especial</span>
+                <strong> $20 </strong>
+              </div>
+
+              <p>Taco preparado con carne asada.</p>
+
+              <button
+                class="view-product"
+                onclick="
+                  mostrarProducto(
+                    'Taco de Asada',
+                    'images/taco de azada.jpg',
+                    'Taco preparado con carne asada.',
+                    '$20',
+                  )
+                "
+              >
+                Ver producto →
+              </button>
+            </div>
+          </article>
+
+          <!-- 2 -->
+
+          <article class="product" data-category="tacos">
+            <div class="product-image">
+              <img
+                src="images/taco de adobada.jpg"
+                alt="Taco de adobada"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="product-body">
+              <div class="product-title">
                 <h3>Taco de Adobada</h3>
-                <p class="precio">$20</p>
-            </div>
-        </div>
 
-        <!-- Taco Chorizo -->
-        <div class="card" onclick="mostrarProducto('Taco de Chorizo','images/taco de chorizo.jpg','Chorizo dorado al punto perfecto.','$20')">
-            <img src="images/taco de chorizo.jpg" alt="Taco de Chorizo">
-            <div class="card-content">
-                <span class="etiqueta">Tradicional</span>
+                <strong> $20 </strong>
+              </div>
+
+              <p>Taco preparado con carne adobada.</p>
+
+              <button
+                class="view-product"
+                onclick="
+                  mostrarProducto(
+                    'Taco de Adobada',
+                    'images/taco de adobada.jpg',
+                    'Taco preparado con carne adobada.',
+                    '$20',
+                  )
+                "
+              >
+                Ver producto →
+              </button>
+            </div>
+          </article>
+
+          <!-- 3 -->
+
+          <article class="product" data-category="tacos">
+            <div class="product-image">
+              <img
+                src="images/taco de chorizo.jpg"
+                alt="Taco de chorizo"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="product-body">
+              <div class="product-title">
                 <h3>Taco de Chorizo</h3>
-                <p class="precio">$20</p>
-            </div>
-        </div>
 
-        <!-- Taco Tripa Guisado -->
-        <div class="card" onclick="mostrarProducto('Taco de Tripa Guisado','images/taco de tripa guisado.jpg','Tripa guisada suave y jugosa.','$28')">
-            <img src="images/taco de tripa guisado.jpg" alt="Taco de Tripa Guisado">
-            <div class="card-content">
-                <span class="etiqueta">Suave</span>
+                <strong> $20 </strong>
+              </div>
+
+              <p>Taco preparado con chorizo.</p>
+
+              <button
+                class="view-product"
+                onclick="
+                  mostrarProducto(
+                    'Taco de Chorizo',
+                    'images/taco de chorizo.jpg',
+                    'Taco preparado con chorizo.',
+                    '$20',
+                  )
+                "
+              >
+                Ver producto →
+              </button>
+            </div>
+          </article>
+
+          <!-- 4 -->
+
+          <article class="product" data-category="tacos">
+            <div class="product-image">
+              <img
+                src="images/taco de tripa guisado.jpg"
+                alt="Taco de tripa guisado"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="product-body">
+              <div class="product-title">
                 <h3>Taco de Tripa Guisado</h3>
-                <p class="precio">$28</p>
-            </div>
-        </div>
 
-        <!-- Taco Tripa Torteado -->
-        <div class="card" onclick="mostrarProducto('Taco de Tripa Torteado','images/taco de tripa torteado.jpg','Tripa crujiente estilo dorado.','$28')">
-            <img src="images/taco de tripa torteado.jpg" alt="Taco de Tripa Torteado">
-            <div class="card-content">
-                <span class="etiqueta">Crujiente</span>
+                <strong> $28 </strong>
+              </div>
+
+              <p>Taco de tripa preparada al estilo guisado.</p>
+
+              <button
+                class="view-product"
+                onclick="
+                  mostrarProducto(
+                    'Taco de Tripa Guisado',
+                    'images/taco de tripa guisado.jpg',
+                    'Taco de tripa preparada al estilo guisado.',
+                    '$28',
+                  )
+                "
+              >
+                Ver producto →
+              </button>
+            </div>
+          </article>
+
+          <!-- 5 -->
+
+          <article class="product" data-category="tacos">
+            <div class="product-image">
+              <img
+                src="images/taco de tripa torteado.jpg"
+                alt="Taco de tripa torteado"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="product-body">
+              <div class="product-title">
                 <h3>Taco de Tripa Torteado</h3>
-                <p class="precio">$28</p>
-            </div>
-        </div>
 
-        <!-- Taco Camarón -->
-        <div class="card" onclick="mostrarProducto('Taco de Camarón','images/taco de camaron.jpg','Camarón sazonado y fresco.','$30')">
-            <img src="images/taco de camaron.jpg" alt="Taco de Camarón">
-            <div class="card-content">
-                <span class="etiqueta">Del mar</span>
+                <strong> $28 </strong>
+              </div>
+
+              <p>Taco de tripa preparada al estilo torteado.</p>
+
+              <button
+                class="view-product"
+                onclick="
+                  mostrarProducto(
+                    'Taco de Tripa Torteado',
+                    'images/taco de tripa torteado.jpg',
+                    'Taco de tripa preparada al estilo torteado.',
+                    '$28',
+                  )
+                "
+              >
+                Ver producto →
+              </button>
+            </div>
+          </article>
+
+          <!-- 6 -->
+
+          <article class="product" data-category="tacos">
+            <div class="product-image">
+              <img
+                src="images/taco de camaron.jpg"
+                alt="Taco de camarón"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="product-body">
+              <div class="product-title">
                 <h3>Taco de Camarón</h3>
-                <p class="precio">$30</p>
-            </div>
-        </div>
 
-        <!-- Taco Pescado -->
-        <div class="card" onclick="mostrarProducto('Taco de Pescado','images/taco de pescado.jpg','Filete de pescado fresco.','$25')">
-            <img src="images/taco de pescado.jpg" alt="Taco de Pescado">
-            <div class="card-content">
-                <span class="etiqueta">Del mar</span>
+                <strong> $30 </strong>
+              </div>
+
+              <p>Taco preparado con camarón.</p>
+
+              <button
+                class="view-product"
+                onclick="
+                  mostrarProducto(
+                    'Taco de Camarón',
+                    'images/taco de camaron.jpg',
+                    'Taco preparado con camarón.',
+                    '$30',
+                  )
+                "
+              >
+                Ver producto →
+              </button>
+            </div>
+          </article>
+
+          <!-- 7 -->
+
+          <article class="product" data-category="tacos">
+            <div class="product-image">
+              <img
+                src="images/taco de pescado.jpg"
+                alt="Taco de pescado"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="product-body">
+              <div class="product-title">
                 <h3>Taco de Pescado</h3>
-                <p class="precio">$25</p>
+
+                <strong> $25 </strong>
+              </div>
+
+              <p>Taco preparado con pescado.</p>
+
+              <button
+                class="view-product"
+                onclick="
+                  mostrarProducto(
+                    'Taco de Pescado',
+                    'images/taco de pescado.jpg',
+                    'Taco preparado con pescado.',
+                    '$25',
+                  )
+                "
+              >
+                Ver producto →
+              </button>
             </div>
-        </div>
+          </article>
 
-      
-        <!-- Órdenes de Carne Asada -->
-        <div class="card" onclick="mostrarProducto(
-          'Órdenes de Carne Asada',
-          'images/orden de carne azada.jpg',
-          'Disfruta nuestra carne asada acompañada con sus complementos.\n\nOpciones disponibles:\n• Media orden: $70\n• Orden completa: $100',
-          'Desde $70'
-)">
-    <img src="images/orden de carne azada.jpg" alt="Órdenes de Carne Asada">
-    <div class="card-content">
-        <span class="etiqueta">Completa</span>
-        <h3>Órdenes de Carne Asada</h3>
-        <p class="precio">Desde $70</p>
-    </div>
-</div>
+          <!-- 8 -->
 
+          <article class="product" data-category="especialidades">
+            <div class="product-image">
+              <img
+                src="images/orden de carne azada.jpg"
+                alt="Orden de carne asada"
+                loading="lazy"
+              />
+            </div>
 
-        <!-- Doradita -->
-        <div class="card" onclick="mostrarProducto('Doradita de Asada','images/doradita de azada.jpg','Doradita crujiente rellena de carne asada.','$30')">
-            <img src="images/doradita de azada.jpg" alt="Doradita de Asada">
-            <div class="card-content">
-                <span class="etiqueta">Crujiente</span>
+            <div class="product-body">
+              <div class="product-title">
+                <h3>Orden de Carne Asada</h3>
+
+                <strong> $70 / $100 </strong>
+              </div>
+
+              <p>Presentación media y completa.</p>
+
+              <button
+                class="view-product"
+                onclick="
+                  mostrarProducto(
+                    'Orden de Carne Asada',
+                    'images/orden de carne azada.jpg',
+                    'Orden de carne asada disponible en presentación media y completa.',
+                    'Media $70 / Completa $100',
+                  )
+                "
+              >
+                Ver producto →
+              </button>
+            </div>
+          </article>
+
+          <!-- 9 -->
+
+          <article class="product" data-category="especialidades">
+            <div class="product-image">
+              <img
+                src="images/doradita de azada.jpg"
+                alt="Doradita de asada"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="product-body">
+              <div class="product-title">
                 <h3>Doradita de Asada</h3>
-                <p class="precio">$30</p>
-            </div>
-        </div>
 
-        <!-- Pellizcada -->
-        <div class="card" onclick="mostrarProducto('Pellizcada de Asada','images/pellizcada de azada.jpg','Pellizcada tradicional con carne asada.','$35')">
-            <img src="images/pellizcada de azada.jpg" alt="Pellizcada de Asada">
-            <div class="card-content">
-                <span class="etiqueta">Tradicional</span>
+                <strong> $30 </strong>
+              </div>
+
+              <p>Doradita preparada con carne asada.</p>
+
+              <button
+                class="view-product"
+                onclick="
+                  mostrarProducto(
+                    'Doradita de Asada',
+                    'images/doradita de azada.jpg',
+                    'Doradita preparada con carne asada.',
+                    '$30',
+                  )
+                "
+              >
+                Ver producto →
+              </button>
+            </div>
+          </article>
+
+          <!-- 10 -->
+
+          <article class="product" data-category="especialidades">
+            <div class="product-image">
+              <img
+                src="images/pellizcada de azada.jpg"
+                alt="Pellizcada de asada"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="product-body">
+              <div class="product-title">
                 <h3>Pellizcada de Asada</h3>
-                <p class="precio">$35</p>
+
+                <strong> $35 </strong>
+              </div>
+
+              <p>Pellizcada preparada con carne asada.</p>
+
+              <button
+                class="view-product"
+                onclick="
+                  mostrarProducto(
+                    'Pellizcada de Asada',
+                    'images/pellizcada de azada.jpg',
+                    'Pellizcada preparada con carne asada.',
+                    '$35',
+                  )
+                "
+              >
+                Ver producto →
+              </button>
             </div>
+          </article>
+
+          <!-- 11 -->
+
+          <article class="product" data-category="bebidas">
+            <div class="product-image">
+              <img
+                src="images/aguas frescas.jpg"
+                alt="Aguas frescas"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="product-body">
+              <div class="product-title">
+                <h3>Aguas Frescas</h3>
+
+                <strong> $15 / $20 / $25 </strong>
+              </div>
+
+              <p>Diferentes presentaciones.</p>
+
+              <button
+                class="view-product"
+                onclick="
+                  mostrarProducto(
+                    'Aguas Frescas',
+                    'images/aguas frescas.jpg',
+                    'Aguas frescas disponibles en diferentes presentaciones.',
+                    '$15 / $20 / $25',
+                  )
+                "
+              >
+                Ver producto →
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =================================================
+             PROMOCIÓN
+        ================================================== -->
+
+      <section class="promotion" id="promocion">
+        <div class="promotion-grid">
+          <div>
+            <span class="eyebrow"> PROMOCIÓN DE LOS MARTES </span>
+
+            <h2>Compra 10 tacos y recibe más para compartir.</h2>
+          </div>
+
+          <div class="promotion-content">
+            <p>En la compra de 10 tacos recibe gratis:</p>
+
+            <ul>
+              <li>1/2 orden de carne asada con verduras</li>
+
+              <li>2 quesadillas</li>
+
+              <li>1/2 litro de agua del día</li>
+            </ul>
+
+            <small> El sabor del agua puede cambiar diariamente. </small>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================
+             GALERÍA
+        ================================================== -->
+
+      <section class="section gallery" id="galeria">
+        <div class="section-heading">
+          <span class="eyebrow"> GALERÍA </span>
+
+          <h2>Parte de nuestro menú</h2>
+
+          <p>Algunas de las opciones disponibles.</p>
         </div>
 
-        <!-- Aguas Frescas -->
-        <div class="card" onclick="mostrarProducto(
-          'Aguas Frescas',
-          'images/aguas frescas.jpg',
-          'El sabor cambia diariamente. Generalmente contamos con jamaica, arroz, granada china, limón y guanábana. Siempre frescas y preparadas al momento.\n\nTamaños disponibles:\n• Chico (350ml aprox): $15\n• Mediano (650ml aprox): $20\n• 1 Litro (1000ml aprox): $25',
-          'Desde $15 hasta $25'
-)">
-    <img src="images/aguas frescas.jpg" alt="Aguas Frescas">
-    <div class="card-content">
-        <span class="etiqueta">Refrescante</span>
-        <h3>Aguas Frescas</h3>
-        <p class="precio">Desde $15</p>
+        <div class="gallery-grid">
+          <button
+            class="gallery-item gallery-feature"
+            onclick="
+              abrirGaleria(
+                'images/orden de carne azada.jpg',
+                'Orden de carne asada',
+              )
+            "
+          >
+            <img
+              src="images/orden de carne azada.jpg"
+              alt="Orden de carne asada"
+              loading="lazy"
+            />
+
+            <span> Orden de carne asada </span>
+          </button>
+
+          <button
+            class="gallery-item"
+            onclick="abrirGaleria('images/taco de azada.jpg', 'Taco de asada')"
+          >
+            <img
+              src="images/taco de azada.jpg"
+              alt="Taco de asada"
+              loading="lazy"
+            />
+
+            <span> Taco de asada </span>
+          </button>
+
+          <button
+            class="gallery-item"
+            onclick="
+              abrirGaleria('images/taco de adobada.jpg', 'Taco de adobada')
+            "
+          >
+            <img
+              src="images/taco de adobada.jpg"
+              alt="Taco de adobada"
+              loading="lazy"
+            />
+
+            <span> Taco de adobada </span>
+          </button>
+
+          <button
+            class="gallery-item"
+            onclick="
+              abrirGaleria('images/taco de chorizo.jpg', 'Taco de chorizo')
+            "
+          >
+            <img
+              src="images/taco de chorizo.jpg"
+              alt="Taco de chorizo"
+              loading="lazy"
+            />
+
+            <span> Taco de chorizo </span>
+          </button>
+
+          <button
+            class="gallery-item"
+            onclick="
+              abrirGaleria('images/taco de camaron.jpg', 'Taco de camarón')
+            "
+          >
+            <img
+              src="images/taco de camaron.jpg"
+              alt="Taco de camarón"
+              loading="lazy"
+            />
+
+            <span> Taco de camarón </span>
+          </button>
+        </div>
+      </section>
+
+      <!-- =================================================
+             CONTACTO
+        ================================================== -->
+
+      <section class="section contact" id="contacto">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <span class="eyebrow"> CONTACTO </span>
+
+            <h2>Visítanos o comunícate con nosotros</h2>
+
+            <p>
+              Para cualquier consulta puedes comunicarte directamente con
+              Taquería Beltrán.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-row">
+                <span class="contact-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M6.6 3.5 9 3l2 4.5-2 1.5a15 15 0 0 0 6 6l1.5-2L21 15l-.5 2.4c-.3 1.4-1.5 2.1-2.8 1.8C10.2 17.5 6.5 13.8 4.8 6.3 4.5 5 5.2 3.8 6.6 3.5Z"
+                    />
+                  </svg>
+                </span>
+
+                <div>
+                  <strong> Teléfono </strong>
+
+                  <a href="tel:3573830226"> 357 383 0226 </a>
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <span class="contact-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"
+                    />
+
+                    <circle cx="12" cy="9" r="2.2" />
+                  </svg>
+                </span>
+
+                <div>
+                  <strong> Ubicación </strong>
+
+                  <span> La Huerta, Jalisco </span>
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <span class="contact-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8" />
+
+                    <path d="M12 8v5l3 2" />
+                  </svg>
+                </span>
+
+                <div>
+                  <strong> Horario </strong>
+
+                  <span> Lunes, martes y viernes a domingo </span>
+
+                  <span> 7:00 PM – 12:00 AM </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="contact-card">
+            <img src="images/logo.jpeg" alt="Logo de Taquería Beltrán" />
+
+            <span> TAQUERÍA BELTRÁN </span>
+
+            <h3>Tacos y especialidades</h3>
+
+            <p>
+              Una opción local para disfrutar diferentes alternativas del menú.
+            </p>
+
+            <a href="tel:3573830226" class="button button-primary">
+              Llamar ahora
+            </a>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+         MODAL PRODUCTO
+    ====================================================== -->
+
+    <div class="modal" id="product-modal" aria-hidden="true">
+      <div class="modal-overlay" onclick="cerrarModal()"></div>
+
+      <div
+        class="modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button class="modal-close" onclick="cerrarModal()" aria-label="Cerrar">
+          ×
+        </button>
+
+        <img id="modal-image" src="" alt="" />
+
+        <div class="modal-body">
+          <span> TAQUERÍA BELTRÁN </span>
+
+          <h2 id="modal-title"></h2>
+
+          <p id="modal-description"></p>
+
+          <strong id="modal-price"></strong>
+        </div>
+      </div>
     </div>
-</div>
 
+    <!-- =====================================================
+         GALERÍA LIGHTBOX
+    ====================================================== -->
 
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button
+        class="lightbox-close"
+        onclick="cerrarGaleria()"
+        aria-label="Cerrar imagen"
+      >
+        ×
+      </button>
+
+      <div class="lightbox-content">
+        <img id="lightbox-image" src="" alt="" />
+
+        <p id="lightbox-title"></p>
+      </div>
     </div>
-</section>
 
-<!-- ================= MODAL ================= -->
-<div id="modal" class="modal">
-    <div class="modal-contenido">
-        <span class="cerrar" onclick="cerrarModal()">&times;</span>
-        <h2 id="modalTitulo"></h2>
-        <img id="modalImg" alt="">
-        <p id="modalDesc"></p>
-        <p id="modalPrecio"></p>
-    </div>
-</div>
+    <!-- =====================================================
+         BOTÓN ARRIBA
+    ====================================================== -->
 
-<!-- BOTÓN VOLVER ARRIBA -->
-<button class="boton-arriba" onclick="irArriba()">↑</button>
+    <button class="back-top" id="back-top" aria-label="Volver arriba">↑</button>
 
-<!-- FOOTER -->
-<footer>
-    📞 357 383 0226 — López Rayón #220, Col. Lo Arado, C.P. 48940 — Casimiro Castillo  
-    <br>
-    © 2026 Taquería Beltrán - Todos los derechos reservados
-</footer>
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
-<script src="js/script.js"></script>
-</body>
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="images/logo.jpeg" alt="Logo de Taquería Beltrán" />
+
+          <h3>Taquería Beltrán</h3>
+
+          <p>Tacos, especialidades y aguas frescas en La Huerta, Jalisco.</p>
+        </div>
+
+        <div>
+          <h4>Navegación</h4>
+
+          <a href="#inicio">Inicio</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#menu">Menú</a>
+          <a href="#galeria">Galería</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+
+        <div>
+          <h4>Horario</h4>
+
+          <span> Lunes y martes </span>
+
+          <span> Viernes a domingo </span>
+
+          <span> 7:00 PM – 12:00 AM </span>
+
+          <span> Miércoles y jueves: descanso </span>
+        </div>
+
+        <div>
+          <h4>Contacto</h4>
+
+          <a href="tel:3573830226"> 357 383 0226 </a>
+
+          <span> La Huerta, Jalisco </span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="current-year"></span>
+          Taquería Beltrán. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>

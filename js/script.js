@@ -1,70 +1,189 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.getElementById("nav-toggle");
 
-  const modal = document.getElementById("modal");
-  const modalTitulo = document.getElementById("modalTitulo");
-  const modalImg = document.getElementById("modalImg");
-  const modalDesc = document.getElementById("modalDesc");
-  const modalPrecio = document.getElementById("modalPrecio");
-  const btnArriba = document.querySelector(".boton-arriba");
-  const cards = document.querySelectorAll(".card");
+  const mainNav = document.getElementById("main-nav");
 
-  // ================= MODAL =================
-  window.mostrarProducto = function (titulo, img, descripcion, precio) {
-    modalTitulo.innerText = titulo;
-    modalImg.src = img;
-    modalImg.alt = titulo;
-    modalDesc.innerText = descripcion;
-    modalPrecio.innerText = "Precio: " + precio;
+  const backTop = document.getElementById("back-top");
 
-    modal.classList.add("mostrar");
-    document.body.style.overflow = "hidden";
-  };
+  const currentYear = document.getElementById("current-year");
 
-  window.cerrarModal = function () {
-    modal.classList.remove("mostrar");
-    document.body.style.overflow = "auto";
-  };
+  /* =====================================================
+       AÑO
+    ====================================================== */
 
-  // Cerrar modal haciendo click fuera del contenido
-  window.addEventListener("click", function (e) {
-    if (e.target === modal) {
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+  }
+
+  /* =====================================================
+       MENÚ MÓVIL
+    ====================================================== */
+
+  if (navToggle && mainNav) {
+    navToggle.addEventListener("click", () => {
+      const opened = mainNav.classList.toggle("active");
+
+      navToggle.setAttribute("aria-expanded", String(opened));
+    });
+
+    mainNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("active");
+
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  /* =====================================================
+       BOTÓN VOLVER ARRIBA
+    ====================================================== */
+
+  window.addEventListener("scroll", () => {
+    if (!backTop) return;
+
+    backTop.classList.toggle("show", window.scrollY > 450);
+  });
+
+  if (backTop) {
+    backTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+
+        behavior: "smooth",
+      });
+    });
+  }
+
+  /* =====================================================
+       FILTROS
+    ====================================================== */
+
+  const filters = document.querySelectorAll(".filter");
+
+  const products = document.querySelectorAll(".product");
+
+  filters.forEach((filter) => {
+    filter.addEventListener("click", () => {
+      const category = filter.dataset.filter;
+
+      filters.forEach((button) => {
+        button.classList.remove("active");
+      });
+
+      filter.classList.add("active");
+
+      products.forEach((product) => {
+        const productCategory = product.dataset.category;
+
+        const visible = category === "todos" || category === productCategory;
+
+        product.hidden = !visible;
+      });
+    });
+  });
+
+  /* =====================================================
+       ESC
+    ====================================================== */
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
       cerrarModal();
+
+      cerrarGaleria();
     }
   });
 
-  // Cerrar modal con tecla ESC
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      cerrarModal();
-    }
-  });
+  /* =====================================================
+       CLICK FUERA DEL LIGHTBOX
+    ====================================================== */
 
-  // ================= ANIMACIÓN CARDS =================
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
+  const lightbox = document.getElementById("lightbox");
+
+  if (lightbox) {
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        cerrarGaleria();
       }
     });
-  }, { threshold: 0.2 });
-
-  cards.forEach(card => observer.observe(card));
-
-  // ================= BOTÓN ARRIBA =================
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) {
-      btnArriba.classList.add("mostrar");
-    } else {
-      btnArriba.classList.remove("mostrar");
-    }
-  });
-
-  window.irArriba = function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  };
-
+  }
 });
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+function mostrarProducto(titulo, imagen, descripcion, precio) {
+  const modal = document.getElementById("product-modal");
+
+  if (!modal) return;
+
+  document.getElementById("modal-title").textContent = titulo;
+
+  document.getElementById("modal-image").src = imagen;
+
+  document.getElementById("modal-image").alt = titulo;
+
+  document.getElementById("modal-description").textContent = descripcion;
+
+  document.getElementById("modal-price").textContent = precio;
+
+  modal.classList.add("active");
+
+  modal.setAttribute("aria-hidden", "false");
+
+  document.body.style.overflow = "hidden";
+}
+
+/* =========================================================
+   CERRAR MODAL
+========================================================= */
+
+function cerrarModal() {
+  const modal = document.getElementById("product-modal");
+
+  if (!modal) return;
+
+  modal.classList.remove("active");
+
+  modal.setAttribute("aria-hidden", "true");
+
+  document.body.style.overflow = "";
+}
+
+/* =========================================================
+   GALERÍA
+========================================================= */
+
+function abrirGaleria(imagen, titulo) {
+  const lightbox = document.getElementById("lightbox");
+
+  document.getElementById("lightbox-image").src = imagen;
+
+  document.getElementById("lightbox-image").alt = titulo;
+
+  document.getElementById("lightbox-title").textContent = titulo;
+
+  lightbox.classList.add("active");
+
+  lightbox.setAttribute("aria-hidden", "false");
+
+  document.body.style.overflow = "hidden";
+}
+
+/* =========================================================
+   CERRAR GALERÍA
+========================================================= */
+
+function cerrarGaleria() {
+  const lightbox = document.getElementById("lightbox");
+
+  if (!lightbox) return;
+
+  lightbox.classList.remove("active");
+
+  lightbox.setAttribute("aria-hidden", "true");
+
+  document.body.style.overflow = "";
+}
