@@ -317,3 +317,7 @@ PAGINAWEB/
 
 * **Raúl Alejandro Beltrán Callejas**
 * *Proyecto de Carácter Académico*
+
+## 15. Colaborador
+
+* **Ernesto Reynaga Morales**
