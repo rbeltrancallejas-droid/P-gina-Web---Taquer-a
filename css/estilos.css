@@ -298,7 +298,7 @@ a:focus-visible {
       rgba(35, 12, 8, 0.66) 45%,
       rgba(35, 12, 8, 0.2) 100%
     ),
-    url("../images/orden de carne azada.jpg") center / cover no-repeat;
+    url("https://bucketaqueria.s3.us-east-2.amazonaws.com/Images/orden%20de%20carne%20azada.jpg") center / cover no-repeat;
 }
 
 .hero-content {
@@ -1721,5 +1721,67 @@ a:focus-visible {
 
   .button {
     width: 100%;
+  }
+}
+
+/* =====================================================
+   VIDEO
+===================================================== */
+
+.video-section {
+  text-align: center;
+}
+
+.video-section .section-heading {
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+}
+
+.video-container {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container video {
+  display: block;
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+  background: #111;
+}
+
+/* =====================================================
+   VIDEO RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+  .video-section .section-heading {
+    margin-bottom: 1.75rem;
+  }
+
+  .video-container {
+    width: 100%;
+  }
+
+  .video-container video {
+    width: 100%;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-section .section-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .video-container video {
+    border-radius: 10px;
   }
 }
